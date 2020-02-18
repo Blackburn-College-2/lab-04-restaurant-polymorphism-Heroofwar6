@@ -22,13 +22,17 @@ public class Runner {
         // TODO code application logic here
         Receipt receipt = new Receipt();
         Money money = new Money(2.00);
-        Size size = new Size("name");
-        Coffee coffee = new Coffee(size.getName(), size, money);
-        receipt.add(coffee);
-        receipt.add(coffee);
-        receipt.add(coffee);
-        receipt.add(coffee);
-        receipt.add(coffee);
+        Size large = new Size("large");
+        Size small = new Size("small");
+        Size medium = new Size("medium");
+        Coffee latte = new Coffee("latte", large, money);
+        Coffee capuccino = new Coffee("capuccino", small, money);
+        Coffee expresso = new Coffee("expresso", medium, money);
+        receipt.add(latte);
+        receipt.add(capuccino);
+        receipt.add(expresso);
+        receipt.add(latte);
+        receipt.add(capuccino);
         System.out.println(receipt.prepare());
     }
     
