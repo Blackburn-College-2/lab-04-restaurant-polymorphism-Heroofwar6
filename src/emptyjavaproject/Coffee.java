@@ -32,8 +32,9 @@ public class Coffee extends MenuItem{
 
     @Override
     public String getReceiptItem() {
-        return this.getName() + "\t" + this.getPrice() + "\t" 
-                + this.size.name + "\n";
+        return this.size.name + " " + this.getName() + "\t" 
+                + this.getPrice() + "\t" 
+                + "\n";
     }
 
 }

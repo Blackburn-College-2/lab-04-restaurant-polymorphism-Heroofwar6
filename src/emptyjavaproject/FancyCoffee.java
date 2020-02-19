@@ -7,6 +7,7 @@ package emptyjavaproject;
 
 import edu.blackburn.cs.cs212.restaurantbase.Money;
 import edu.blackburn.cs.cs212.restaurantbase.Orderable;
+import edu.blackburn.cs.cs212.restaurantbase.Receipt;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +20,7 @@ public class FancyCoffee extends Coffee {
         super(name, size, basePrice);
     }
     public Orderable add(){
-        
+        addOn.add(this);
+        return this;
     }
 }
