@@ -13,14 +13,24 @@ import edu.blackburn.cs.cs212.restaurantbase.Measurement;
  */
 public class Size extends Measurement {
     String name;
-    
+    /**
+     * 
+     * @param name the name of the size of the ordered item
+     */
     public Size(String name){
         this.name = name;
     }
-
+    /**
+     * 
+     * @return name of the size
+     */
     public String getName() {
         return name;
     }
+    /**
+     * 
+     * @return a string of the size
+     */
     @Override
     public String toString(){
         return this.toString();

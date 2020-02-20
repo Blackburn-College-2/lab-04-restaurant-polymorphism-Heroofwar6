@@ -21,24 +21,29 @@ public class Runner {
     public static void main(String[] args) {
         // TODO code application logic here
         Receipt receipt = new Receipt();
-        Money money = new Money(2.00);
+        Money money = new Money(1.00);
         Money sPrice = new Money(0.50);
-        Size large = new Size("large");
-        Size small = new Size("small");
-        Size medium = new Size("medium");
+        Size large = new Size("Large");
+        Size small = new Size("Small");
+        Size medium = new Size("Medium");
         Syrup chocolate = new Syrup("Chocolate", sPrice);
         Syrup cherry = new Syrup("Cherry", sPrice);
-        Coffee latte = new Coffee("latte", large, money);
-        Coffee capuccino = new Coffee("capuccino", small, money);
-        Coffee expresso = new Coffee("expresso", medium, money);
+        Topping top = new Topping("Tomato", sPrice);
+        Meat meat = new Meat("Ham", sPrice);
+        Meat meet = new Meat("Bacon", sPrice);
+        Coffee expresso = new Coffee("Black Coffee", medium, money);
         FancyCoffee fCoffee = new FancyCoffee("Capuccino", medium, money);
-        receipt.add(latte);
-        receipt.add(capuccino);
+        Sandwich sandwich = new Sandwich("Sandwich", medium, money);
+        sandwich.add(top);
+        sandwich.add(meat);
+        sandwich.add(meet);
+        fCoffee.add(cherry);
+        fCoffee.add(chocolate);
         receipt.add(expresso);
-        receipt.add(latte);
-        receipt.add(capuccino);
         receipt.add(fCoffee);
+        receipt.add(sandwich);
         System.out.println(receipt.prepare());
+        System.out.println(receipt.getTotalString());
     }
     
 }
